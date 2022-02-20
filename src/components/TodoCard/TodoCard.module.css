@@ -1,0 +1,8 @@
+.card {
+    padding: var(--bordered-element-padding);
+    border-radius: 8px;
+    border: 1px solid var(--main-border-color);
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
