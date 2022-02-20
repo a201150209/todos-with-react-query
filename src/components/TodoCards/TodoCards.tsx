@@ -8,6 +8,7 @@ import DataLoadingError from '../DataLoadingError'
 const TodoCards: FC = () => {
     const queryClient = useQueryClient()
     const { data = [], isLoading, isError } = useQuery('todos', getTodos)
+
     const update = useMutation(updateTodo, {
         onSuccess: () => {
             queryClient.invalidateQueries('todos')
@@ -23,6 +24,7 @@ const TodoCards: FC = () => {
         <>
             <Loader isLoading={isLoading} />
             <DataLoadingError isError={isError} />
+
             {data.map((todo) => (
                 <TodoCard
                     key={todo.id}

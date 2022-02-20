@@ -1,18 +1,17 @@
 import React, { FC } from 'react'
 import './App.css'
-import Desk from './components/Desk'
-import TodoCards from './components/TodoCards'
+import { ReactQueryDevtools } from 'react-query/devtools'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import TodoDesk from './components/TodoDesk'
 const queryClient = new QueryClient()
 
 const App: FC = () => {
     return (
         <QueryClientProvider client={queryClient}>
             <div className="App">
-                <Desk>
-                    <TodoCards />
-                </Desk>
+                <TodoDesk />
             </div>
+            <ReactQueryDevtools initialIsOpen={false} />
         </QueryClientProvider>
     )
 }

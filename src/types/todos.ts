@@ -3,5 +3,5 @@ export interface ITodo {
     title: string
     description: string
     updatedAt: string
-    id: string
+    id: number
 }

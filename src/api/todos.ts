@@ -5,6 +5,12 @@ import { API_URL } from './config'
 export const getTodos = (): Promise<ITodo[]> =>
     makeRequest({ url: `${API_URL}/todos` })
 
+export const addTodo = (): Promise<ITodo[]> =>
+    makeRequest({
+        url: `${API_URL}/todos/`,
+        method: 'POST',
+    })
+
 export const updateTodo = (todo: ITodo): Promise<ITodo[]> =>
     makeRequest({
         url: `${API_URL}/todos/${todo.id}`,
@@ -12,7 +18,7 @@ export const updateTodo = (todo: ITodo): Promise<ITodo[]> =>
         body: todo,
     })
 
-export const removeTodo = (id: string): Promise<ITodo[]> =>
+export const removeTodo = (id: number): Promise<ITodo[]> =>
     makeRequest({
         url: `${API_URL}/todos/${id}`,
         method: 'DELETE',

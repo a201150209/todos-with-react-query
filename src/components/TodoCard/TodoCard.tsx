@@ -4,7 +4,7 @@ import { ITodo } from '../../types'
 
 interface ITodoCard extends ITodo {
     onChange: (updatedTodo: ITodo) => void
-    onDelete: (id: string) => void
+    onDelete: (id: number) => void
 }
 
 const TodoCard: FC<ITodoCard> = ({
@@ -24,7 +24,7 @@ const TodoCard: FC<ITodoCard> = ({
                 defaultValue={description}
                 disabled={!isEditMode}
                 ref={descriptionRef}
-            ></textarea>
+            />
             <button
                 type="button"
                 onClick={() => {
